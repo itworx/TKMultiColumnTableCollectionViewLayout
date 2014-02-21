@@ -21,6 +21,11 @@
 		D3C7C95E18B4E0670017A827 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C7C94018B4E0670017A827 /* UIKit.framework */; };
 		D3C7C96618B4E0670017A827 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3C7C96418B4E0670017A827 /* InfoPlist.strings */; };
 		D3C7C96818B4E0670017A827 /* TKMultiColumnTableCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7C96718B4E0670017A827 /* TKMultiColumnTableCollectionViewTests.m */; };
+		D3C7C97318B4E0E90017A827 /* TKMultiColumnCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7C97218B4E0E90017A827 /* TKMultiColumnCollectionViewLayout.m */; };
+		D3C7C97618B5164B0017A827 /* TKMultiColumnCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7C97518B5164B0017A827 /* TKMultiColumnCollectionViewController.m */; };
+		D3C7C97D18B516850017A827 /* TKGradebookGradableItemColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7C97818B516850017A827 /* TKGradebookGradableItemColumnHeader.m */; };
+		D3C7C97E18B516850017A827 /* TKGradebookGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7C97A18B516850017A827 /* TKGradebookGridline.m */; };
+		D3C7C97F18B516850017A827 /* TKGradebookStudentRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7C97C18B516850017A827 /* TKGradebookStudentRowHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,16 @@
 		D3C7C96318B4E0670017A827 /* TKMultiColumnTableCollectionViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKMultiColumnTableCollectionViewTests-Info.plist"; sourceTree = "<group>"; };
 		D3C7C96518B4E0670017A827 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3C7C96718B4E0670017A827 /* TKMultiColumnTableCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMultiColumnTableCollectionViewTests.m; sourceTree = "<group>"; };
+		D3C7C97118B4E0E90017A827 /* TKMultiColumnCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMultiColumnCollectionViewLayout.h; sourceTree = "<group>"; };
+		D3C7C97218B4E0E90017A827 /* TKMultiColumnCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMultiColumnCollectionViewLayout.m; sourceTree = "<group>"; };
+		D3C7C97418B5164B0017A827 /* TKMultiColumnCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMultiColumnCollectionViewController.h; sourceTree = "<group>"; };
+		D3C7C97518B5164B0017A827 /* TKMultiColumnCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMultiColumnCollectionViewController.m; sourceTree = "<group>"; };
+		D3C7C97718B516850017A827 /* TKGradebookGradableItemColumnHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGradebookGradableItemColumnHeader.h; sourceTree = "<group>"; };
+		D3C7C97818B516850017A827 /* TKGradebookGradableItemColumnHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGradebookGradableItemColumnHeader.m; sourceTree = "<group>"; };
+		D3C7C97918B516850017A827 /* TKGradebookGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGradebookGridline.h; sourceTree = "<group>"; };
+		D3C7C97A18B516850017A827 /* TKGradebookGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGradebookGridline.m; sourceTree = "<group>"; };
+		D3C7C97B18B516850017A827 /* TKGradebookStudentRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGradebookStudentRowHeader.h; sourceTree = "<group>"; };
+		D3C7C97C18B516850017A827 /* TKGradebookStudentRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGradebookStudentRowHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +134,16 @@
 				D3C7C95218B4E0670017A827 /* TKViewController.m */,
 				D3C7C95418B4E0670017A827 /* Images.xcassets */,
 				D3C7C94318B4E0670017A827 /* Supporting Files */,
+				D3C7C97118B4E0E90017A827 /* TKMultiColumnCollectionViewLayout.h */,
+				D3C7C97218B4E0E90017A827 /* TKMultiColumnCollectionViewLayout.m */,
+				D3C7C97418B5164B0017A827 /* TKMultiColumnCollectionViewController.h */,
+				D3C7C97518B5164B0017A827 /* TKMultiColumnCollectionViewController.m */,
+				D3C7C97718B516850017A827 /* TKGradebookGradableItemColumnHeader.h */,
+				D3C7C97818B516850017A827 /* TKGradebookGradableItemColumnHeader.m */,
+				D3C7C97918B516850017A827 /* TKGradebookGridline.h */,
+				D3C7C97A18B516850017A827 /* TKGradebookGridline.m */,
+				D3C7C97B18B516850017A827 /* TKGradebookStudentRowHeader.h */,
+				D3C7C97C18B516850017A827 /* TKGradebookStudentRowHeader.m */,
 			);
 			path = TKMultiColumnTableCollectionView;
 			sourceTree = "<group>";
@@ -251,8 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C7C95318B4E0670017A827 /* TKViewController.m in Sources */,
+				D3C7C97618B5164B0017A827 /* TKMultiColumnCollectionViewController.m in Sources */,
 				D3C7C94918B4E0670017A827 /* main.m in Sources */,
 				D3C7C94D18B4E0670017A827 /* TKAppDelegate.m in Sources */,
+				D3C7C97E18B516850017A827 /* TKGradebookGridline.m in Sources */,
+				D3C7C97F18B516850017A827 /* TKGradebookStudentRowHeader.m in Sources */,
+				D3C7C97318B4E0E90017A827 /* TKMultiColumnCollectionViewLayout.m in Sources */,
+				D3C7C97D18B516850017A827 /* TKGradebookGradableItemColumnHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
