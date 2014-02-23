@@ -17,7 +17,6 @@ NSString *const TKCollectionElementKindColumnHeaderBackground;
 NSString *const TKCollectionElementKindColumnGroupHeader;
 NSString *const TKCollectionElementKindColumnGroupHeaderBackground;
 NSString *const TKCollectionElementKindVerticalGridline;
-NSString *const TKCollectionElementKindVerticalLastGridline;
 NSString *const TKCollectionElementKindHorizontalGridline;
 
 NSString *const TKCollectionElementKindRowHeaderOriginCell;

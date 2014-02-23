@@ -18,7 +18,6 @@ NSString *const TKCollectionElementKindRowFooterBackground          = @"TKCollec
 NSString *const TKCollectionElementKindColumnHeaderBackground       = @"TKCollectionElementKindColumnHeaderBackground";
 NSString *const TKCollectionElementKindColumnGroupHeaderBackground  = @"TKCollectionElementKindColumnGroupHeaderBackground";
 NSString *const TKCollectionElementKindVerticalGridline             = @"TKCollectionElementKindVerticalGridline";
-NSString *const TKCollectionElementKindVerticalLastGridline             = @"TKCollectionElementKindVerticalLastGridline";
 NSString *const TKCollectionElementKindHorizontalGridline           = @"TKCollectionElementKindHorizontalGridline";
 
 NSString *const TKCollectionElementKindRowHeaderOriginCell = @"TKCollectionElementKindRowHeaderOriginCell";
@@ -70,8 +69,6 @@ NSUInteger const TKCollectionMinBackgroundZ = 100.0;
 
 @property (nonatomic, strong) NSMutableDictionary *horizontalGridlineAttributes;
 @property (nonatomic, strong) NSMutableDictionary *verticalGridlineAttributes;
-
-@property (nonatomic, strong) UICollectionViewLayoutAttributes *lastVerticalGridlineAttributes;
 
 @property (nonatomic, strong) UICollectionViewLayoutAttributes *rowHeaderOriginCellAttributes;
 
@@ -206,14 +203,14 @@ NSUInteger const TKCollectionMinBackgroundZ = 100.0;
 - (UICollectionViewLayoutAttributes *)rowFooterOriginCellAttributes {
     
     if (!_rowFooterOriginCellAttributes) {
-        NSIndexPath *rowHeaderOriginIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
-        UICollectionViewLayoutAttributes *rowHeaderOriginAttributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:TKCollectionElementKindRowFooterOriginCell withIndexPath:rowHeaderOriginIndexPath];
+        NSIndexPath *rowFooterOriginIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+        UICollectionViewLayoutAttributes *rowFooterOriginAttributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:TKCollectionElementKindRowFooterOriginCell withIndexPath:rowFooterOriginIndexPath];
         // update its frame
-        CGFloat rowHeaderOriginMinY = self.collectionView.contentInset.top + self.collectionView.contentOffset.y;
+        CGFloat rowFooterOriginMinY = self.collectionView.contentInset.top + self.collectionView.contentOffset.y;
         CGFloat rowFooterMinX = fmaxf(self.collectionView.contentOffset.x + self.collectionView.frame.size.width - self.rowFooterWidth, 0.0);
-        rowHeaderOriginAttributes.frame = CGRectMake(rowFooterMinX, rowHeaderOriginMinY, self.rowHeaderWidth, self.rowHeaderHeight);
-        rowHeaderOriginAttributes.zIndex = [self zIndexForElementKind:TKCollectionElementKindRowHeaderOriginCell];
-        _rowFooterOriginCellAttributes = rowHeaderOriginAttributes;
+        rowFooterOriginAttributes.frame = CGRectMake(rowFooterMinX, rowFooterOriginMinY, self.rowFooterWidth, self.rowFooterHeight);
+        rowFooterOriginAttributes.zIndex = [self zIndexForElementKind:TKCollectionElementKindRowHeaderOriginCell];
+        _rowFooterOriginCellAttributes = rowFooterOriginAttributes;
     }
     
     return _rowFooterOriginCellAttributes;
@@ -366,7 +363,7 @@ NSUInteger const TKCollectionMinBackgroundZ = 100.0;
             UICollectionViewLayoutAttributes *rowFooterAttributes = [self layoutAttributesForSupplementaryViewAtIndexPath:rowFooterIndexPath ofKind:TKCollectionElementKindRowFooter withItemCache:self.rowFooterAttributes];
             // update its frame
             CGFloat rowFooterMinY = gridContentMinY + (self.rowFooterHeight * idx);
-            rowFooterAttributes.frame = CGRectMake(rowFooterMinX, rowFooterMinY, self.rowFooterWidth, self.rowHeaderHeight);
+            rowFooterAttributes.frame = CGRectMake(rowFooterMinX, rowFooterMinY, self.rowFooterWidth, self.rowFooterHeight);
             rowFooterAttributes.zIndex = [self zIndexForElementKind:TKCollectionElementKindRowHeader];
         }
         
@@ -414,14 +411,14 @@ NSUInteger const TKCollectionMinBackgroundZ = 100.0;
             NSIndexPath *verticalGridlineIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
             UICollectionViewLayoutAttributes *verticalGridlineAttributes = [self layoutAttributesForDecorationViewAtIndexPath:verticalGridlineIndexPath ofKind:TKCollectionElementKindVerticalGridline withItemCache:self.verticalGridlineAttributes];
             CGFloat verticalGridlineHeight = self.collectionViewContentSize.height;
-            CGFloat verticalGridlineMinX = sectionMinX +  + self.rowHeaderWidth;// nearbyintf(sectionMinX - self.sectionMargin.left);
+            CGFloat verticalGridlineMinX = sectionMinX;
             verticalGridlineAttributes.frame = CGRectMake(verticalGridlineMinX, gridMinY, self.verticalGridlineWidth, verticalGridlineHeight);
             verticalGridlineAttributes.zIndex = [self zIndexForElementKind:TKCollectionElementKindVerticalGridline];
         }
         
         NSIndexPath *verticalGridlineIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
         UICollectionViewLayoutAttributes *separatorAttributes = [self layoutAttributesForDecorationViewAtIndexPath:verticalGridlineIndexPath ofKind:TKCollectionElementKindVerticalGridlineSeparator withItemCache:self.columnHeaderSeparatorAttributes];
-        separatorAttributes.frame = CGRectMake(sectionMinX + self.rowHeaderWidth, self.collectionView.contentOffset.y + self.columnGroupHeaderHeight + self.collectionView.contentInset.top, self.verticalGridlineWidth, self.columnHeaderHeight);
+        separatorAttributes.frame = CGRectMake(sectionMinX, self.collectionView.contentOffset.y + self.columnGroupHeaderHeight + self.collectionView.contentInset.top, self.verticalGridlineWidth, self.columnHeaderHeight);
         separatorAttributes.zIndex = [self zIndexForElementKind:TKCollectionElementKindVerticalGridlineSeparator];
         
         if (needsToPopulateItemAttributes) {
