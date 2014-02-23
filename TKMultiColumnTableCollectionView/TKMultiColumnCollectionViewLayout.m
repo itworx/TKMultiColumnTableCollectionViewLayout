@@ -455,7 +455,7 @@ NSUInteger const TKCollectionMinBackgroundZ = 100.0;
                 
                 if (columnIndexs.count) {
                     
-                    NSIndexPath *columnsGroupIndexPath = [NSIndexPath indexPathForItem:0 inSection:[columnIndexs firstIndex]];
+                    NSIndexPath *columnsGroupIndexPath = [NSIndexPath indexPathForItem:0 inSection:group];
                     UICollectionViewLayoutAttributes *columnsGroupAttribute = [self layoutAttributesForSupplementaryViewAtIndexPath:columnsGroupIndexPath ofKind:TKCollectionElementKindColumnGroupHeader withItemCache:self.columnGroupHeaderAttributes];
                     CGFloat groupMinX = groupsWidth + gridContentMinX;
                     __block CGFloat groupWidth = 0;
