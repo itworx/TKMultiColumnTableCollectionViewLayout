@@ -37,6 +37,9 @@ NSString *const TKCollectionElementKindVerticalGridlineSeparator;
 @property (nonatomic, assign) CGFloat rowHeaderWidth;
 @property (nonatomic, assign) CGFloat rowHeaderHeight;
 
+@property (nonatomic, assign) CGFloat rowHeaderFirstHeight;
+@property (nonatomic, assign) CGFloat rowFooterFirstHeight;
+
 @property (nonatomic, assign) CGFloat rowFooterWidth;
 @property (nonatomic, assign) CGFloat rowFooterHeight;
 
@@ -54,6 +57,9 @@ NSString *const TKCollectionElementKindVerticalGridlineSeparator;
 @property (nonatomic, assign) UIEdgeInsets cellMargin;
 
 @property (nonatomic, assign) BOOL displayHeaderBackgroundAtOrigin;
+
+- (CGRect)visibleItemsRect;
+- (void)scrollToVisibleRect:(CGRect)rect;
 
 - (void)invalidateLayoutCache;
 
